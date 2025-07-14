@@ -1,7 +1,6 @@
 
 
-''''This document contains a program suitable for the analysis 
-of non-standard varieties, aiming to examine the category of psychological verbs'''.
+''''This document contains a program suitable for the analysis of a non-standard Italian variety, aiming to examine the category of psychological verbs.''.
 # -*- coding: utf-8 -*-
 """
 Annotated Italian NLP Pipeline
