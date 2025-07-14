@@ -1,8 +1,8 @@
 
 
-''''This document contains a program suitable for the analysis of a non-standard Italian variety, aiming to examine the category of psychological verbs.''.
+''''This document contains a program suitable for the analysis of a non-standard Italian variety, aiming to examine the category of psychological verbs""
 # -*- coding: utf-8 -*-
-"""
+
 Annotated Italian NLP Pipeline
 This script reads an Italian text, cleans and preprocesses it, segments it semantically,
 extracts linguistic features, computes TTR and TF-IDF, visualizes results, and identifies
