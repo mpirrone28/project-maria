@@ -192,7 +192,6 @@ print(f"TTR lemmas: {ttr_lemmi:.4f}")
 # 12. TF-IDF keyword extraction (nouns, pronouns, proper nouns)
 pos_filters = ["NOUN","PROPN","PRON"]
 pronomini = ["io","tu","noi","voi"]
-exclude = ['po','sembre','volta','cera']  # etc.
 tok_val = [
     token.lemma_.lower() for token in nlp(clean)
     if token.pos_ in pos_filters and token.is_alpha
