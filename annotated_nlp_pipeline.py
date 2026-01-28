@@ -214,24 +214,3 @@ plt.figure(figsize=(10,5))
 plt.imshow(wc, interpolation='bilinear')
 plt.axis('off')
 
-# 15. Extract psychological phenomena via regex
-verbi = ["amare","piacere","temere","ricordare"]  # etc.
-verb_patterns = {v: re.compile(rf"(?u)\b{v}\w*\b", re.IGNORECASE) for v in verbi}
-records = []
-for seg_id, toks in segments:
-    text = ' '.join(toks)
-    for lemma, pat in verb_patterns.items():
-        for m in pat.finditer(text):
-            records.append({
-                "Segment ID": seg_id,
-                "Pattern": lemma,
-                "Match": m.group(),
-                "Position": m.start()
-            })
-df_psych = pd.DataFrame(records)
-df_psych.to_csv(os.path.join(OUTPUT_DIR,'psychological_events.csv'), index=False)
-
-# 16. Deduplicate and compute relative frequencies
-df_unique = df_psych.drop_duplicates(subset=["Segment ID","Pattern","Match"])
-freq_rel = df_unique['Pattern'].value_counts(normalize=True).round(2).reset_index(name='RelFreq')
-freq_rel.to_csv(os.path.join(OUTPUT_DIR,'psych_freq_rel.csv'), index=False)
